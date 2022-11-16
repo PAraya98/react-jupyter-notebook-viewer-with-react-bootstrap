@@ -16,3 +16,7 @@ export type NotebookOutputBlockType = {
     outputImageClassName?: string;
     outputBorderClassName?: string;
 };
+export type ImageZoom = {
+    src: string;
+    classname?: string;
+};

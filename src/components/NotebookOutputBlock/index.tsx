@@ -1,9 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { vs2015, github } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { NotebookOutputBlockType } from "./types";
+import { NotebookOutputBlockType, ImageZoom } from "./types";
 
 import SynaxHighlighter from "react-syntax-highlighter";
+import Lightbox from 'react-image-lightbox';
+
+const ImageZoom: React.FC<ImageZoom> = (props: ImageZoom) => {
+    const {src, classname} = props;
+    const [isOpen, setIsOpen] = useState(false)
+
+    return( 
+    <React.Fragment>
+        <img
+            className={classname}
+            src={src}
+            alt=""
+            onClick={() => setIsOpen(true)}
+            style={{ cursor: 'pointer' }}
+        />
+        {isOpen && (
+        <Lightbox
+            animationDisabled={true}
+            mainSrc={src}
+            onCloseRequest={() => setIsOpen(false)}
+        />)}
+    </React.Fragment>)
+}
 
 const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
     const {
@@ -88,17 +111,24 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
             )}
         </React.Fragment>
     );
+       {/* <img
+            className={outputImageClassName}
+            src={`data:image/png;base64,${data["image/png"]}`}
+            alt=""
+        />*/}
 
     const renderImageBlock = () => (
+        
         <React.Fragment>
             {data && !Array.isArray(data) && data["image/png"] && (
-                <img
-                    className={outputImageClassName}
+                <ImageZoom
+                    classname={outputImageClassName}
                     src={`data:image/png;base64,${data["image/png"]}`}
-                    alt=""
-                />
+                />                
             )}
         </React.Fragment>
+    
+        
     );
 
     const renderStreamBlock = () => (
@@ -122,7 +152,7 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
 
     return (
         <div
-            className={`tw-output-block tw-output-${executionCount} tw-flex tw-w-full tw-py-2 ${
+            className={`output-block tw-output-${executionCount} tw-flex tw-w-full tw-py-2 ${
                 outputOuterClassName || ""
             } ${
                 activeExecutionCount === executionCount
@@ -132,7 +162,7 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
                     : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 md:tw-pl-0"
             }`}>
             <p
-                className={`tw-output-block-text tw-hidden md:tw-flex md:tw-w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
+                className={`output-block-text tw-hidden md:tw-flex md:tw-w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
                     outputTextClassName || ""
                 } ${
                     activeExecutionCount === executionCount

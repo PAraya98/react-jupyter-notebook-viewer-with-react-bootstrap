@@ -103,7 +103,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
 
     const renderCodeBlock = () => (
         <div
-            className={`tw-input-${executionCount} tw-flex tw-w-full tw-py-2 ${inputOuterClassName || ""} ${
+            className={`input-${executionCount} tw-flex tw-w-full tw-py-2 ${inputOuterClassName || ""} ${
                 activeExecutionCount === executionCount
                     ? `tw-border-l-8 ${
                           inputBorderClassName ? inputBorderClassName : "tw-border-blue-400"
@@ -111,7 +111,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
                     : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 md:tw-pl-0"
             }`}>
             <p
-                className={`tw-hidden tw-md:flex tw-md:w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
+                className={`tw-hidden md:tw-flex md:tw-w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
                     inputTextClassName || ""
                 } ${
                     activeExecutionCount === executionCount
@@ -139,7 +139,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
 
     const renderMarkdownBlock = () => (
         <div
-            className={`tw-input-${executionCount} tw-flex tw-w-full tw-py-2 ${inputOuterClassName || ""} ${
+            className={`input-${executionCount} tw-flex tw-w-full tw-py-2 ${inputOuterClassName || ""} ${
                 activeExecutionCount === executionCount
                     ? `tw-border-l-8 ${
                           inputBorderClassName ? inputBorderClassName : "tw-border-blue-400"
@@ -152,7 +152,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
                 }`}
             />
             <div
-                className={`tw-markdown-block tw-w-full md:tw-w-5/6 xl:tw-w-11/12 ${
+                className={`markdown-block tw-w-full md:tw-w-5/6 xl:tw-w-11/12 ${
                     inputMarkdownBlockClassName || ""
                 } ${inputMarkdownDarkTheme ? "tw-text-black" : "tw-text-white"}`}>
                 <ReactMarkdown

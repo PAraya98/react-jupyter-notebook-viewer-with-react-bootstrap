@@ -66,7 +66,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
         });
 
         document.querySelectorAll(".markdown-block a").forEach((a) => {
-            a.classList.add(...["tw-visited:tw-text-purple-400", "tw-hover:tw-underline"]);
+            a.classList.add(...["visited:tw-text-purple-400", "hover:tw-underline"]);
         });
 
         document.querySelectorAll(".markdown-block ol").forEach((ol) => {
@@ -108,10 +108,10 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
                     ? `tw-border-l-8 ${
                           inputBorderClassName ? inputBorderClassName : "tw-border-blue-400"
                       } tw-my-2 tw-pl-2 tw-md:pl-0`
-                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 tw-md:tw-pl-0"
+                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 md:tw-pl-0"
             }`}>
             <p
-                className={`tw-hidden tw-md:flex tw-md:w-1/6 tw-xl:tw-w-1/12 tw-font-semibold tw-justify-end tw-md:tw-pr-12 tw-xl:tw-pr-6 ${
+                className={`tw-hidden tw-md:flex tw-md:w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
                     inputTextClassName || ""
                 } ${
                     activeExecutionCount === executionCount
@@ -126,7 +126,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
                     : "..."}
                 ]:
             </p>
-            <div className={`tw-w-full tw-md:tw-w-5/6 tw-xl:tw-w-11/12 ${inputCodeBlockClassName || ""}`}>
+            <div className={`tw-w-full md:tw-w-5/6 xl:tw-w-11/12 ${inputCodeBlockClassName || ""}`}>
                 <SynaxHighlighter
                     language={notebookInputLanguage}
                     style={inputCodeDarkTheme ? vs2015 : github}
@@ -143,16 +143,16 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
                 activeExecutionCount === executionCount
                     ? `tw-border-l-8 ${
                           inputBorderClassName ? inputBorderClassName : "tw-border-blue-400"
-                      } tw-my-2 tw-pl-2 tw-md:tw-pl-0`
-                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 tw-md:tw-pl-0"
+                      } tw-my-2 tw-pl-2 md:tw-pl-0`
+                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 md:tw-pl-0"
             }`}>
             <div
-                className={`tw-hidden tw-md:tw-flex tw-md:tw-w-1/6 tw-xl:tw-w-1/12 tw-font-semibold tw-justify-end tw-md:tw-pr-12 tw-xl:tw-pr-6 ${
+                className={`tw-hidden md:tw-flex md:tw-w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
                     inputTextClassName || ""
                 }`}
             />
             <div
-                className={`tw-markdown-block tw-w-full tw-md:tw-w-5/6 tw-xl:tw-w-11/12 ${
+                className={`tw-markdown-block tw-w-full md:tw-w-5/6 xl:tw-w-11/12 ${
                     inputMarkdownBlockClassName || ""
                 } ${inputMarkdownDarkTheme ? "tw-text-black" : "tw-text-white"}`}>
                 <ReactMarkdown

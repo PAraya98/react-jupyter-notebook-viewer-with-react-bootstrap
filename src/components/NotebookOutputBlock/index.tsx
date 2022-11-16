@@ -128,11 +128,11 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
                 activeExecutionCount === executionCount
                     ? `tw-border-l-8 ${
                           outputBorderClassName ? outputBorderClassName : "tw-border-blue-400"
-                      } tw-my-2 tw-pl-2 tw-md:tw-pl-0`
-                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 tw-md:tw-pl-0"
+                      } tw-my-2 tw-pl-2 md:tw-pl-0`
+                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 md:tw-pl-0"
             }`}>
             <p
-                className={`tw-output-block-text tw-hidden tw-md:tw-flex tw-md:tw-w-1/6 tw-xl:tw-w-1/12 tw-font-semibold tw-justify-end tw-md:tw-pr-12 tw-xl:tw-pr-6 ${
+                className={`tw-output-block-text tw-hidden md:tw-flex md:tw-w-1/6 xl:tw-w-1/12 tw-font-semibold tw-justify-end md:tw-pr-12 xl:tw-pr-6 ${
                     outputTextClassName || ""
                 } ${
                     activeExecutionCount === executionCount
@@ -144,7 +144,7 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
                 }`}>
                 {index === 0 && <React.Fragment>Out [{executionCount}]:</React.Fragment>}
             </p>
-            <div className={`tw-w-full tw-md:tw-w-5/6 tw-xl:tw-w-11/12 ${outputBlockClassName || ""}`}>
+            <div className={`tw-w-full md:tw-w-5/6 xl:tw-w-11/12 ${outputBlockClassName || ""}`}>
                 {data &&
                     !Array.isArray(data) &&
                     !data["text/html"] &&

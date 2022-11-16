@@ -32,70 +32,70 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
 
     useEffect(() => {
         document.querySelectorAll(".markdown-block h1").forEach((h1) => {
-            h1.classList.add(...["text-3xl", "font-extrabold", "border-b", "pt-3"]);
+            h1.classList.add(...["tw-text-3xl", "tw-font-extrabold", "tw-border-b", "tw-pt-3"]);
             inputMarkdownDarkTheme
-                ? h1.classList.add(...["border-black"])
-                : h1.classList.add(...["border-white"]);
+                ? h1.classList.add(...["tw-border-black"])
+                : h1.classList.add(...["tw-border-white"]);
         });
 
         document.querySelectorAll(".markdown-block h2").forEach((h2) => {
-            h2.classList.add(...["text-2xl", "font-bold", "border-b", "pt-2"]);
+            h2.classList.add(...["tw-text-2xl", "tw-font-bold", "tw-border-b", "tw-pt-2"]);
             inputMarkdownDarkTheme
-                ? h2.classList.add(...["border-black"])
-                : h2.classList.add(...["border-white"]);
+                ? h2.classList.add(...["tw-border-black"])
+                : h2.classList.add(...["tw-border-white"]);
         });
 
         document.querySelectorAll(".markdown-block h3").forEach((h3) => {
-            h3.classList.add(...["text-xl", "font-semibold", "pt-1"]);
+            h3.classList.add(...["tw-text-xl", "tw-font-semibold", "tw-pt-1"]);
         });
 
         document.querySelectorAll(".markdown-block h4").forEach((h4) => {
-            h4.classList.add(...["text-lg", "font-semibold", "pt-1"]);
+            h4.classList.add(...["tw-text-lg", "tw-font-semibold", "tw-pt-1"]);
         });
 
         document.querySelectorAll(".markdown-block h5").forEach((h5) => {
-            h5.classList.add(...["text-lg", "font-semibold", "pt-1"]);
+            h5.classList.add(...["tw-text-lg", "tw-font-semibold", "tw-pt-1"]);
         });
 
         document.querySelectorAll(".markdown-block h6").forEach((h6) => {
-            h6.classList.add(...["text-lg", "font-semibold", "pt-1"]);
+            h6.classList.add(...["tw-text-lg", "tw-font-semibold", "tw-pt-1"]);
         });
 
         document.querySelectorAll(".markdown-block > p").forEach((p) => {
-            p.classList.add(...["py-1"]);
+            p.classList.add(...["tw-py-1"]);
         });
 
         document.querySelectorAll(".markdown-block a").forEach((a) => {
-            a.classList.add(...["visited:text-purple-400", "hover:underline"]);
+            a.classList.add(...["tw-visited:tw-text-purple-400", "tw-hover:tw-underline"]);
         });
 
         document.querySelectorAll(".markdown-block ol").forEach((ol) => {
-            ol.classList.add(...["list-decimal", "py-2", "px-10"]);
+            ol.classList.add(...["tw-list-decimal", "tw-py-2", "tw-px-10"]);
         });
 
         document.querySelectorAll(".markdown-block ul").forEach((ul) => {
-            ul.classList.add(...["list-disc", "py-2", "px-10"]);
+            ul.classList.add(...["tw-list-disc", "tw-py-2", "tw-px-10"]);
         });
 
         document.querySelectorAll(".markdown-block blockquote").forEach((blockquote) => {
             blockquote.classList.add(
-                ...["py-1", "my-2", "mx-8", "px-5", "border-l-8", "border-gray-400"]
+                ...["tw-py-1", "tw-my-2", "tw-mx-8", "tw-px-5", "tw-border-l-8", "tw-border-gray-400"]
             );
         });
 
         document.querySelectorAll(".markdown-block code").forEach((code) => {
-            code.classList.add(...["bg-zinc-300", "px-2", "rounded-sm"]);
+            code.classList.add(...["tw-bg-zinc-300", "tw-px-2", "tw-rounded-sm"]);
         });
 
         document.querySelectorAll(".markdown-block pre code").forEach((code) => {
             code.classList.add(
                 ...[
-                    "block",
-                    "bg-transparent",
-                    "whitespace-pre-wrap",
-                    "overflow-x-auto",
-                    "max-w-full",
-                    "p-0",
+                    "tw-block",
+                    "tw-bg-transparent",
+                    "tw-whitespace-pre-wrap",
+                    "tw-overflow-x-auto",
+                    "tw-max-w-full",
+                    "tw-p-0",
                 ]
             );
         });
@@ -103,22 +103,22 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
 
     const renderCodeBlock = () => (
         <div
-            className={`input-${executionCount} flex w-full py-2 ${inputOuterClassName || ""} ${
+            className={`tw-input-${executionCount} tw-flex tw-w-full tw-py-2 ${inputOuterClassName || ""} ${
                 activeExecutionCount === executionCount
-                    ? `border-l-8 ${
-                          inputBorderClassName ? inputBorderClassName : "border-blue-400"
-                      } my-2 pl-2 md:pl-0`
-                    : "border-l-8 border-transparent my-2 pl-2 md:pl-0"
+                    ? `tw-border-l-8 ${
+                          inputBorderClassName ? inputBorderClassName : "tw-border-blue-400"
+                      } tw-my-2 tw-pl-2 tw-md:pl-0`
+                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 tw-md:tw-pl-0"
             }`}>
             <p
-                className={`hidden md:flex md:w-1/6 xl:w-1/12 font-semibold justify-end md:pr-12 xl:pr-6 ${
+                className={`tw-hidden tw-md:flex tw-md:w-1/6 tw-xl:tw-w-1/12 tw-font-semibold tw-justify-end tw-md:tw-pr-12 tw-xl:tw-pr-6 ${
                     inputTextClassName || ""
                 } ${
                     activeExecutionCount === executionCount
-                        ? "text-blue-500"
+                        ? "tw-text-blue-500"
                         : inputCodeDarkTheme
-                        ? "text-black"
-                        : "text-white"
+                        ? "tw-text-black"
+                        : "tw-text-white"
                 }`}>
                 In [
                 {executionCount < RANDOM_INDEX_START_FOR_NULL_EXECUTION_COUNT
@@ -126,7 +126,7 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
                     : "..."}
                 ]:
             </p>
-            <div className={`w-full md:w-5/6 xl:w-11/12 ${inputCodeBlockClassName || ""}`}>
+            <div className={`tw-w-full tw-md:tw-w-5/6 tw-xl:tw-w-11/12 ${inputCodeBlockClassName || ""}`}>
                 <SynaxHighlighter
                     language={notebookInputLanguage}
                     style={inputCodeDarkTheme ? vs2015 : github}
@@ -139,22 +139,22 @@ const NotebookInputBlock: React.FC<NotebookInputBlockType> = (props) => {
 
     const renderMarkdownBlock = () => (
         <div
-            className={`input-${executionCount} flex w-full py-2 ${inputOuterClassName || ""} ${
+            className={`tw-input-${executionCount} tw-flex tw-w-full tw-py-2 ${inputOuterClassName || ""} ${
                 activeExecutionCount === executionCount
-                    ? `border-l-8 ${
-                          inputBorderClassName ? inputBorderClassName : "border-blue-400"
-                      } my-2 pl-2 md:pl-0`
-                    : "border-l-8 border-transparent my-2 pl-2 md:pl-0"
+                    ? `tw-border-l-8 ${
+                          inputBorderClassName ? inputBorderClassName : "tw-border-blue-400"
+                      } tw-my-2 tw-pl-2 tw-md:tw-pl-0`
+                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 tw-md:tw-pl-0"
             }`}>
             <div
-                className={`hidden md:flex md:w-1/6 xl:w-1/12 font-semibold justify-end md:pr-12 xl:pr-6 ${
+                className={`tw-hidden tw-md:tw-flex tw-md:tw-w-1/6 tw-xl:tw-w-1/12 tw-font-semibold tw-justify-end tw-md:tw-pr-12 tw-xl:tw-pr-6 ${
                     inputTextClassName || ""
                 }`}
             />
             <div
-                className={`markdown-block w-full md:w-5/6 xl:w-11/12 ${
+                className={`tw-markdown-block tw-w-full tw-md:tw-w-5/6 tw-xl:tw-w-11/12 ${
                     inputMarkdownBlockClassName || ""
-                } ${inputMarkdownDarkTheme ? "text-black" : "text-white"}`}>
+                } ${inputMarkdownDarkTheme ? "tw-text-black" : "tw-text-white"}`}>
                 <ReactMarkdown
                     children={source}
                     remarkPlugins={

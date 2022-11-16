@@ -10,16 +10,14 @@ import { NotebookInputBlock } from "../NotebookInputBlock";
 import { NotebookOutputBlock } from "../NotebookOutputBlock";
 
 const JupyterNotebookViewer: React.FC<JupyterNotebookViewerType> = (props) => {
-    const { filePath, withOnClick, className, hideAllOutputs, hideAllInputs } = props;
+    const { json, withOnClick, className, hideAllOutputs, hideAllInputs } = props;
 
     const [activeExecutionCount, setActiveExecutionCount] = useState(0);
     const [notebookParts, setNotebookParts] = useState<Array<NotebookPartType | null>>([]);
 
     useEffect(() => {
         const loadJupyterNotebook = async () => {
-            const response = await fetch(filePath);
-            const data = await response.json();
-            return data;
+            return json;
         };
 
         loadJupyterNotebook().then((data) => {
@@ -97,10 +95,10 @@ const JupyterNotebookViewer: React.FC<JupyterNotebookViewerType> = (props) => {
 
             setNotebookParts(codeCellInputs);
         });
-    }, [filePath]);
+    }, [json]);
 
     return (
-        <div className={`p-4 ${className || ""}`}>
+        <div className={`tw-p-4 ${className || ""}`}>
             {notebookParts.map((part, index) => (
                 <div
                     key={index}

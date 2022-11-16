@@ -1,5 +1,5 @@
 export type JupyterNotebookViewerType = {
-    filePath: string;
+    json: any;
     className?: string;
     notebookInputLanguage?: string;
     notebookOutputLanguage?: string;

@@ -28,38 +28,38 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
         document.querySelectorAll("table").forEach((table) => {
             outputTableClassName
                 ? outputTableClassName.split(" ").map((className) => table.classList.add(className))
-                : table.classList.add(...["min-w-full", "text-right", "table-auto", "mx-auto"]);
+                : table.classList.add(...["tw-min-w-full", "tw-text-right", "tw-table-auto", "tw-mx-auto"]);
         });
 
         document.querySelectorAll("table thead").forEach((table) => {
-            table.classList.add(...["font-bold"]);
+            table.classList.add(...["tw-font-bold"]);
             outputDarkTheme
-                ? table.classList.add(...["bg-zinc-900", "text-zinc-300"])
-                : table.classList.add(...["bg-white", "text-gray-700"]);
+                ? table.classList.add(...["tw-bg-zinc-900", "tw-text-zinc-300"])
+                : table.classList.add(...["tw-bg-white", "tw-text-gray-700"]);
         });
 
         document.querySelectorAll("table thead th").forEach((table) => {
-            table.classList.add(...["p-3", "border-b"]);
+            table.classList.add(...["tw-p-3", "tw-border-b"]);
             outputDarkTheme
-                ? table.classList.add(...["border-gray-700"])
-                : table.classList.add(...["border-gray-300"]);
+                ? table.classList.add(...["tw-border-gray-700"])
+                : table.classList.add(...["tw-border-gray-300"]);
         });
 
         document.querySelectorAll("table tbody").forEach((table) => {
             outputDarkTheme
-                ? table.classList.add(...["bg-zinc-900", "text-zinc-300"])
-                : table.classList.add(...["bg-white", "text-gray-700"]);
+                ? table.classList.add(...["tw-bg-zinc-900", "tw-text-zinc-300"])
+                : table.classList.add(...["tw-bg-white", "tw-text-gray-700"]);
         });
 
         document.querySelectorAll("table tbody tr").forEach((table) => {
-            table.classList.add(...["border-b"]);
+            table.classList.add(...["tw-border-b"]);
             outputDarkTheme
-                ? table.classList.add(...["border-gray-700"])
-                : table.classList.add(...["border-gray-300"]);
+                ? table.classList.add(...["tw-border-gray-700"])
+                : table.classList.add(...["tw-border-gray-300"]);
         });
 
         document.querySelectorAll("table tbody tr td").forEach((table) => {
-            table.classList.add(...["py-3", "px-4"]);
+            table.classList.add(...["tw-py-3", "tw-px-4"]);
         });
     }, [data, outputDarkTheme, outputTableClassName]);
 
@@ -80,7 +80,7 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
         <React.Fragment>
             {data && !Array.isArray(data) && data["text/html"] && (
                 <div
-                    className="overflow-x-auto"
+                    className="tw-overflow-x-auto"
                     dangerouslySetInnerHTML={{
                         __html: data["text/html"].join(""),
                     }}
@@ -122,29 +122,29 @@ const NotebookOutputBlock: React.FC<NotebookOutputBlockType> = (props) => {
 
     return (
         <div
-            className={`output-block output-${executionCount} flex w-full py-2 ${
+            className={`tw-output-block tw-output-${executionCount} tw-flex tw-w-full tw-py-2 ${
                 outputOuterClassName || ""
             } ${
                 activeExecutionCount === executionCount
-                    ? `border-l-8 ${
-                          outputBorderClassName ? outputBorderClassName : "border-blue-400"
-                      } my-2 pl-2 md:pl-0`
-                    : "border-l-8 border-transparent my-2 pl-2 md:pl-0"
+                    ? `tw-border-l-8 ${
+                          outputBorderClassName ? outputBorderClassName : "tw-border-blue-400"
+                      } tw-my-2 tw-pl-2 tw-md:tw-pl-0`
+                    : "tw-border-l-8 tw-border-transparent tw-my-2 tw-pl-2 tw-md:tw-pl-0"
             }`}>
             <p
-                className={`output-block-text hidden md:flex md:w-1/6 xl:w-1/12 font-semibold justify-end md:pr-12 xl:pr-6 ${
+                className={`tw-output-block-text tw-hidden tw-md:tw-flex tw-md:tw-w-1/6 tw-xl:tw-w-1/12 tw-font-semibold tw-justify-end tw-md:tw-pr-12 tw-xl:tw-pr-6 ${
                     outputTextClassName || ""
                 } ${
                     activeExecutionCount === executionCount
-                        ? "text-red-500"
+                        ? "tw-text-red-500"
                         : outputDarkTheme
-                        ? "text-black"
-                        : "text-white"
+                        ? "tw-text-black"
+                        : "tw-text-white"
                 }
                 }`}>
                 {index === 0 && <React.Fragment>Out [{executionCount}]:</React.Fragment>}
             </p>
-            <div className={`w-full md:w-5/6 xl:w-11/12 ${outputBlockClassName || ""}`}>
+            <div className={`tw-w-full tw-md:tw-w-5/6 tw-xl:tw-w-11/12 ${outputBlockClassName || ""}`}>
                 {data &&
                     !Array.isArray(data) &&
                     !data["text/html"] &&

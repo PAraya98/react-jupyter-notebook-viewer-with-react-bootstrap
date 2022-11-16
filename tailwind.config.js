@@ -4,5 +4,8 @@ module.exports = {
         extend: {},
     },
     plugins: [],
-    prefix: 'tw-'
+    prefix: 'tw-',
+    corePlugins: {
+        preflight: false,
+    }
 };

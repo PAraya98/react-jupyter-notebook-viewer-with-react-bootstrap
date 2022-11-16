@@ -20,8 +20,8 @@ const JupyterNotebookViewer: React.FC<JupyterNotebookViewerType> = (props) => {
             return json;
         };
 
-        loadJupyterNotebook().then((data) => {
-            const cells: Array<Cell> = Object.entries(data).filter(
+        loadJupyterNotebook().then((json: object) => {
+            const cells: Array<Cell> = Object.entries(json).filter(
                 ([key]) => key === "cells"
             )[0][1] as Array<Cell>;
 

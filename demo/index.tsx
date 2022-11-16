@@ -17,7 +17,7 @@ const DARK_MODE = true;
 root.render(
     <>
         <JupyterNotebookViewer
-            filePath="https://raw.githubusercontent.com/josephcslater/JupyterExamples/master/Curve_fitting_Julia.ipynb"
+            json={{}}
             className="notebook-class"
             notebookInputLanguage="python"
             // notebookOutputLanguage="python"

@@ -1,4 +1,4 @@
-# React Jupyter Notebook Viewer
+# React Jupyter Notebook Viewer for React Bootstrap
 
 <img src="https://raw.githubusercontent.com/mtetik98/react-jupyter-notebook-viewer/main/static/logo.webp" align="right" width="200" />
 

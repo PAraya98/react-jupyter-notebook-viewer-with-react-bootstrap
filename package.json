@@ -29,17 +29,21 @@
         "url": "https://github.com/mtetik98/react-jupyter-notebook-viewer.git"
     },
     "homepage": "https://github.com/mtetik98/react-jupyter-notebook-viewer",
+    "peerDependencies": {
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0"
+    },
     "devDependencies": {
-        "@types/react": "^18.0.9",
-        "@types/react-dom": "^18.0.5",
-        "@types/react-syntax-highlighter": "^15.5.1",
+        "@types/react": "^18.0.25",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "@types/react-dom": "^18.0.9",
+        "@types/react-syntax-highlighter": "^15.5.5",
         "@types/webpack": "^5.28.0",
         "autoprefixer": "^10.4.7",
         "html-webpack-plugin": "^5.5.0",
         "postcss": "^8.4.14",
         "process": "^0.11.10",
-        "react": "^18.1.0",
-        "react-dom": "^18.1.0",
         "react-icons": "^4.4.0",
         "react-scripts": "^5.0.1",
         "rehype-katex": "^6.0.2",
